@@ -5,4 +5,4 @@ const num3 = [4, 5, 6, ...num1]
 console.log(num2);
 console.log(num3);
 
-// เป็นการเพิ่มสมาชิกจาก array ไปอีก array
+// เป็นการเพิ่มหรือกระจายสมาชิกจาก array นึงไปอีก array นึง
