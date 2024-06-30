@@ -1,15 +1,15 @@
 import Transaction from "./component/Transaction";
+import './component/App.css'
 
-const Title = ()=> <h1>บัญชีรายรับ-รายจ่าย</h1>
-const Description = ()=> <p>ข้อมูลบัญชีในแต่ละวัน</p>
+const topCss = {color:'white', textAlign:'center'};
+const Title = ()=> <h1 style={topCss}>บัญชีรายรับ-รายจ่าย</h1>
 
 function App() {
   return (
-    <>
+    <div className="container">
       <Title />
-      <Description />
       <Transaction />
-    </>
+    </div>
   );
 }
 

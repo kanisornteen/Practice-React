@@ -1,8 +1,13 @@
 import Items from "./Items";
+import './Transaction.css'
 
 const Transaction = ()=> {
     return (
-        <ul>
+        <ul className="container-item">
+            <Items />
+            <Items />
+            <Items />
+            <Items />
             <Items />
         </ul>
     );
