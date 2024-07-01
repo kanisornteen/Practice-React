@@ -1,7 +1,7 @@
-import './FromComponent.css'
+import './FormComponent.css'
 import {useState} from 'react'
 
-const FromComponent = ()=> {
+const FormComponent = ()=> {
     const [title, setTitle] = useState('') // อ่านการใช้ useState ได้ที่โฟลเดอร์ How to Create React and Learn React - 7-11
     const [amount, setAmount] = useState(0)
 
@@ -41,4 +41,4 @@ const FromComponent = ()=> {
     );
 }
 
-export default FromComponent
+export default FormComponent
