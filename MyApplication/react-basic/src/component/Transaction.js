@@ -5,9 +5,9 @@ import { v4 as uuidv4 } from 'uuid';
 const Transaction = ()=> {
     const data = [
         {title: "เงินเดือน", amount:"23000"},
-        {title: "ค่าขนม", amount:"เงินเดือน"},
+        {title: "ค่าขนม", amount:"7000"},
         {title: "ค่าเกม", amount:"1000"},
-        {title: "ค่าไฟ"}
+        {title: "ค่าไฟ", amount:"1000"}
     ]
 
     return (
