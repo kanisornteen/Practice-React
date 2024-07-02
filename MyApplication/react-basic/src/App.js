@@ -2,6 +2,7 @@ import Transaction from "./component/Transaction";
 import './component/App.css';
 import FormComponent from "./component/FormComponent";
 import { useState } from "react";
+import DataContext from "./data/DataContext";
 
 const topCss = {color:'white', textAlign:'center'};
 const Title = ()=> <h1 style={topCss}>บัญชีรายรับ-รายจ่าย</h1>
@@ -22,11 +23,14 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <Title />
-      <FormComponent addItem={onAddItem} />
-      <Transaction item={item} />
-    </div>
+    // อ่าน Context API ได้ที่โฟลเดอร์ How to Create React and Learn React - 16-18
+    <DataContext.Provider value="kanisorn">
+      <div className="container">
+        <Title />
+        <FormComponent addItem={onAddItem} />
+        <Transaction item={item} />
+      </div>
+    </DataContext.Provider>
   );
 }
 
