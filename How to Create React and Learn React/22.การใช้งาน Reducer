@@ -1,0 +1,14 @@
+การใช้งาน Reducer
+
+1.นิยาม Reducer ขึ้นมา มีตัวอย่างดังนี้
+const reducer = (state //คือ state ที่ต้องการจะให้เกิด action หรือการเปลี่ยนแปลง, action //รูปแบบการกระทำที่ทำต่อ state ที่เลือก) => {
+    switch(action.type) {
+        case "1" :
+            return state+1
+        case "2" :
+            return state+2
+    }
+}
+
+2.เรียกใช้ Reducer มีตัวอย่างดังนี้
+const [result, dispatch] = useReducer(//reducer ที่นิยามที่จะใช้, //state ที่ต้องการเปลี่ยนแปลงค่า)

@@ -7,9 +7,9 @@ const Report = ()=> {
 
     return (
         <div className="report-box">
-            <p className="income">รายรับ : {income}</p>
-            <p className="expense">รายจ่าย : {expense}</p>
-            <p>คงเหลือ : {income-expense}</p>
+            <p className="income">รายรับ : ฿{income}</p>
+            <p className="expense">รายจ่าย : ฿{expense}</p>
+            <p>คงเหลือ : ฿{income-expense}</p>
         </div>
     );
 }

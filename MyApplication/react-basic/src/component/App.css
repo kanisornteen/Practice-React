@@ -22,3 +22,15 @@ body {
   margin: 30px auto;
   width: 350px;
 }
+
+.btnShow-box {
+  margin: 20px auto;
+}
+
+.btnShow-box button{
+  margin-right: 5px;
+  background-color: rgb(109, 197, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 15px;
+}

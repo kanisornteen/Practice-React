@@ -1,7 +1,7 @@
 import Transaction from "./component/Transaction";
 import './component/App.css';
 import FormComponent from "./component/FormComponent";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import DataContext from "./data/DataContext";
 import Report from "./component/Report";
 
@@ -32,12 +32,30 @@ function App() {
     setExpenseReport(expense)
   },[item, incomeReport, expenseReport])
 
+  //reducer state อ่านได้ที่โฟลเดอร์ How to Create React and Learn React - 21-22
+  const [showReport] = useState(true)
+  const reducer = (state, action) => {
+    switch(action.type) {
+      case "SHOW" :
+        return true
+      case "HIDE" :
+        return false
+      default :
+        return state
+    }
+  }
+  const [result, dispatch] = useReducer(reducer, showReport)
+
   return (
     // อ่าน Context API ได้ที่โฟลเดอร์ How to Create React and Learn React - 16-18
     <DataContext.Provider value={{income: incomeReport, expense: expenseReport}}>
       <div className="container">
         <Title />
-        <Report />
+        <div className="btnShow-box">
+          <button onClick={()=>dispatch({type:"SHOW"})}>แสดง</button>
+          <button onClick={()=>dispatch({type:"HIDE"})}>ซ่อน</button>
+        </div>
+        {result && <Report />}
         <FormComponent addItem={onAddItem} />
         <Transaction item={item} />
       </div>
