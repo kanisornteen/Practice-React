@@ -3,6 +3,7 @@ import './component/App.css';
 import FormComponent from "./component/FormComponent";
 import { useState } from "react";
 import DataContext from "./data/DataContext";
+import Report from "./component/Report";
 
 const topCss = {color:'white', textAlign:'center'};
 const Title = ()=> <h1 style={topCss}>บัญชีรายรับ-รายจ่าย</h1>
@@ -27,6 +28,7 @@ function App() {
     <DataContext.Provider value="kanisorn">
       <div className="container">
         <Title />
+        <Report />
         <FormComponent addItem={onAddItem} />
         <Transaction item={item} />
       </div>

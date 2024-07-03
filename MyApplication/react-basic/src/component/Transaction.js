@@ -1,6 +1,5 @@
 import Items from "./Items";
 import './Transaction.css'
-import DataContext from "../data/DataContext";
 
 const Transaction = (props)=> {
     const {item} = props
@@ -11,9 +10,6 @@ const Transaction = (props)=> {
                     return <Items title={element.title} amount={element.amount} key={element.id} />
                 })}
             </ul>
-            <DataContext.Consumer>
-                {value=><p>{value}</p>}
-            </DataContext.Consumer>
         </>
     );
 }
