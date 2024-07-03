@@ -1,4 +1,12 @@
 .report-box {
-    margin-top: 20px;
-    color: white;
+    margin: 20px 0 20px 0;
+    color: white
+}
+
+.income {
+    color: green;
+}
+
+.expense {
+    color: red;
 }
