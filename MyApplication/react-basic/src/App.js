@@ -29,8 +29,8 @@ function App() {
     const dataAmount = item.map(element=>element.amount)
     const income = dataAmount.filter(element=>element>0).reduce((total, element)=>total+=element,0)
     const expense = (dataAmount.filter(element=>element<0).reduce((total, element)=>total+=element,0))*-1
-    setIncomeReport(income)
-    setExpenseReport(expense)
+    setIncomeReport(income.toFixed(2))
+    setExpenseReport(expense.toFixed(2))
   },[item, incomeReport, expenseReport])
 
   //reducer state อ่านได้ที่โฟลเดอร์ How to Create React and Learn React - 21-22

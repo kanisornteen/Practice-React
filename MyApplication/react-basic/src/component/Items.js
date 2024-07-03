@@ -6,9 +6,13 @@ const Items = (props)=> { // จะเขียนแบบนี้ก็ได
     const {title, amount} = props
     const status = amount < 0 ? "expense" : "income"
     const symbol = amount < 0 ? "-" : "+"
+
+    const formatNumber=(num)=> {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
     return (
         <>
-            <li>{title} <span className={status}>{symbol}{Math.abs(amount)}</span></li>
+            <li>{title} <span className={status}>{symbol}{formatNumber((Math.abs(amount)).toFixed(2))}</span></li>
         </>
     );
 }
