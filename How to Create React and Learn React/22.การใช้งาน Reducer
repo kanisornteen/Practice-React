@@ -7,8 +7,10 @@ const reducer = (state //คือ state ที่ต้องการจะใ
             return state+1
         case "2" :
             return state+2
+        defualt :
+            return state
     }
 }
 
 2.เรียกใช้ Reducer มีตัวอย่างดังนี้
-const [result, dispatch] = useReducer(//reducer ที่นิยามที่จะใช้, //state ที่ต้องการเปลี่ยนแปลงค่า)
+const [//ชื่อ state(แล้วแต่จะตั้ง), dispatch] = useReducer(//reducer ที่นิยามที่จะใช้, //ค่าเริ่มต้นของ state)

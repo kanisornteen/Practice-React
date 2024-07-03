@@ -33,7 +33,6 @@ function App() {
   },[item, incomeReport, expenseReport])
 
   //reducer state อ่านได้ที่โฟลเดอร์ How to Create React and Learn React - 21-22
-  const [showReport] = useState(true)
   const reducer = (state, action) => {
     switch(action.type) {
       case "SHOW" :
@@ -44,7 +43,7 @@ function App() {
         return state
     }
   }
-  const [result, dispatch] = useReducer(reducer, showReport)
+  const [showReport, dispatch] = useReducer(reducer, true)
 
   return (
     // อ่าน Context API ได้ที่โฟลเดอร์ How to Create React and Learn React - 16-18
@@ -55,7 +54,7 @@ function App() {
           <button onClick={()=>dispatch({type:"SHOW"})}>แสดง</button>
           <button onClick={()=>dispatch({type:"HIDE"})}>ซ่อน</button>
         </div>
-        {result && <Report />}
+        {showReport && <Report />}
         <FormComponent addItem={onAddItem} />
         <Transaction item={item} />
       </div>
