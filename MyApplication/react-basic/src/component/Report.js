@@ -1,12 +1,14 @@
 import { useContext } from "react"
 import DataContext from "../data/DataContext"
+import './Report.css'
 
 const Report = ()=> {
-    const name = useContext(DataContext)
+    const {income, expense} = useContext(DataContext)
 
     return (
-        <div>
-            สวัสดี : {name}
+        <div className="report-box">
+            <p>รายรับ : {income}</p>
+            <p>รายจ่าย : {expense}</p>
         </div>
     );
 }
