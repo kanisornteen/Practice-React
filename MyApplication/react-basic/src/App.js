@@ -4,6 +4,7 @@ import FormComponent from "./component/FormComponent";
 import { useEffect, useState, useReducer } from "react";
 import DataContext from "./data/DataContext";
 import Report from "./component/Report";
+import { BrowserRouter as Router, Link, Route, Routes} from "react-router-dom"
 
 const topCss = {color:'white', textAlign:'center'};
 const Title = ()=> <h1 style={topCss}>บัญชีรายรับ-รายจ่าย</h1>
@@ -50,13 +51,26 @@ function App() {
     <DataContext.Provider value={{income: incomeReport, expense: expenseReport}}>
       <div className="container">
         <Title />
+        <Router>
+          <div>
+            <ul>
+              <li>
+                <Link to="/">หน้าแรก</Link>
+              </li>
+              <li>
+                <Link to="/insert">เพิ่มข้อมูล</Link>
+              </li>
+            </ul>
+            <Routes>
+              <Route path="/" element={showReport && <Report />} exact></Route>
+              <Route path="/insert" element={<><FormComponent addItem={onAddItem} /><Transaction item={item} /></>}></Route>
+            </Routes>
+          </div>
+        </Router>
         <div className="btnShow-box">
           <button onClick={()=>dispatch({type:"SHOW"})}>แสดง</button>
           <button onClick={()=>dispatch({type:"HIDE"})}>ซ่อน</button>
         </div>
-        {showReport && <Report />}
-        <FormComponent addItem={onAddItem} />
-        <Transaction item={item} />
       </div>
     </DataContext.Provider>
   );
