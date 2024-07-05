@@ -52,13 +52,13 @@ function App() {
       <div className="container">
         <Title />
         <Router>
-          <div>
+          <div className="list-page">
             <ul>
               <li>
-                <Link to="/">หน้าแรก</Link>
+                <Link to="/" style={{color:'white', textDecoration: 'none'}}>หน้าแรก</Link>
               </li>
               <li>
-                <Link to="/insert">เพิ่มข้อมูล</Link>
+                <Link to="/insert" style={{color:'white', textDecoration: 'none'}}>เพิ่มข้อมูล</Link>
               </li>
             </ul>
             <Routes>

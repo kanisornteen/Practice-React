@@ -34,3 +34,7 @@ body {
   cursor: pointer;
   padding: 5px 15px;
 }
+
+.list-page {
+  margin-top: 5px;
+}
